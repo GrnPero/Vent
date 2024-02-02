@@ -1,8 +1,12 @@
 import "./App.css";
-import VentButton from "./components/VentButton";
+import Notepad from "./components/Notepad";
 
 function App() {
-  return <VentButton />;
+  return (
+    <>
+      <Notepad />
+    </>
+  );
 }
 
 export default App;
