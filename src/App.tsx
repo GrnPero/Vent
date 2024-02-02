@@ -1,7 +1,8 @@
 import "./App.css";
+import VentButton from "./components/VentButton";
 
 function App() {
-  return;
+  return <VentButton />;
 }
 
 export default App;
