@@ -1,9 +1,12 @@
-import { Paper, TextField, Box } from "@mui/material";
+import { Paper, TextField, Box, Alert } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useMediaQuery } from "@mui/material";
+import { useState } from "react";
+import Grid from "@mui/material/Grid";
 
 const Notepad = () => {
   const matches = useMediaQuery("(max-width:768px)");
+  const [text, setText] = useState("");
 
   return (
     <Box
@@ -31,15 +34,41 @@ const Notepad = () => {
           sx={{
             "& fieldset": { border: "none" },
           }}
-        />
-
-        <SendIcon
-          style={{
-            marginTop: 20,
-            marginLeft: "auto",
-            cursor: "pointer",
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            if (event.target.value.length >= 700) {
+              // Stop input at 10 characters
+              setText(event.target.value.substring(0, 700));
+              return;
+            } else {
+              setText(event.target.value);
+            }
           }}
         />
+
+        {text.length >= 700 ? (
+          <Alert
+            severity="error"
+            style={{
+              margin: "auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "55vw",
+            }}
+          >
+            Max 700 characters
+          </Alert>
+        ) : null}
+
+        {text.length >= 700 ? null : (
+          <SendIcon
+            style={{
+              marginTop: 20,
+              marginLeft: "auto",
+              cursor: "pointer",
+            }}
+          />
+        )}
       </Paper>
     </Box>
   );
