@@ -2,7 +2,6 @@ import { Paper, TextField, Box, Alert } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
-import Grid from "@mui/material/Grid";
 
 const Notepad = () => {
   const matches = useMediaQuery("(max-width:768px)");
