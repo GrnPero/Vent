@@ -61,6 +61,8 @@ const Notepad = () => {
 
         {text.length >= 700 ? null : (
           <IconButton
+            color="primary"
+            size="large"
             style={{
               marginTop: 20,
               marginLeft: "auto",
