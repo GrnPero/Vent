@@ -1,4 +1,4 @@
-import { Paper, TextField, Box, Alert } from "@mui/material";
+import { Paper, TextField, Box, Alert, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
@@ -60,13 +60,15 @@ const Notepad = () => {
         ) : null}
 
         {text.length >= 700 ? null : (
-          <SendIcon
+          <IconButton
             style={{
               marginTop: 20,
               marginLeft: "auto",
               cursor: "pointer",
             }}
-          />
+          >
+            <SendIcon />
+          </IconButton>
         )}
       </Paper>
     </Box>
