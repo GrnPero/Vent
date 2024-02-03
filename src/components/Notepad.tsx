@@ -5,6 +5,7 @@ import {
   Alert,
   IconButton,
   CircularProgress,
+  Typography,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useMediaQuery } from "@mui/material";
@@ -14,12 +15,14 @@ const Notepad = () => {
   const matches = useMediaQuery("(max-width:768px)");
   const [text, setText] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const [res, setRes] = useState<string>("");
 
   const handleButtonClick = () => {
     setLoading(true);
 
     setTimeout(() => {
       setLoading(false);
+      setRes("Your message has been sent!");
     }, 2000);
   };
 
@@ -39,6 +42,17 @@ const Notepad = () => {
             height: "50vh",
           }}
         />
+      ) : res.length != 0 ? (
+        <Typography
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "50vh",
+          }}
+        >
+          {res}
+        </Typography>
       ) : (
         <Paper
           elevation={3}
