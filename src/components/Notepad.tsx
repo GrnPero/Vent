@@ -44,6 +44,7 @@ const Notepad = () => {
         />
       ) : res.length != 0 ? (
         <Typography
+          variant="h5"
           style={{
             display: "flex",
             justifyContent: "center",
