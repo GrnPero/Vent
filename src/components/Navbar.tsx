@@ -15,7 +15,7 @@ const Navbar = () => {
       }}
     >
       <IconButton color="primary" size="large">
-        <Segment />
+        <Segment fontSize={matches ? "large" : "medium"} />
       </IconButton>
     </Stack>
   );

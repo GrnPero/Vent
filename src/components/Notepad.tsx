@@ -111,7 +111,7 @@ const Notepad = () => {
               }}
               onClick={handleButtonClick}
             >
-              <SendIcon />
+              <SendIcon fontSize={matches ? "large" : "medium"} />
             </IconButton>
           )}
         </Paper>
