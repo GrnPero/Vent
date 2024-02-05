@@ -10,6 +10,7 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
+import apiClient from "../services/api-client";
 
 const Notepad = () => {
   const matches = useMediaQuery("(max-width:768px)");
@@ -20,10 +21,17 @@ const Notepad = () => {
   const handleButtonClick = () => {
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      setRes("Your message has been sent!");
-    }, 2000);
+    apiClient
+      .get("/")
+      .then((response) => {
+        setLoading(false);
+        setRes(response.data.message);
+      })
+      .catch((error) => {
+        setLoading(false);
+        setRes("Error fetching data from Firebase");
+        console.error("Error fetching data from Firebase:", error);
+      });
   };
 
   return (
@@ -45,11 +53,13 @@ const Notepad = () => {
       ) : res.length != 0 ? (
         <Typography
           variant="h5"
+          sx={{ wordBreak: "break-word" }}
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: "50vh",
+            flexDirection: "column",
+            width: matches ? "70vw" : "60vw",
           }}
         >
           {res}
