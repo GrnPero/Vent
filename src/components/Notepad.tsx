@@ -22,7 +22,7 @@ const Notepad = () => {
     setLoading(true);
 
     apiClient
-      .get("/")
+      .post("/", { vent: text })
       .then((response) => {
         setLoading(false);
         setRes(response.data.message);
