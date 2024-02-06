@@ -58,6 +58,7 @@ const Notepad = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            textAlign: "left",
             flexDirection: "column",
             width: matches ? "70vw" : "60vw",
           }}
