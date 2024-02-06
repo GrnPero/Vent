@@ -1,4 +1,4 @@
-import { Stack, Typography, Modal, Box, Backdrop, Fade } from "@mui/material";
+import { Stack, Typography, Modal, Box, Fade } from "@mui/material";
 import { IconButton } from "@mui/material";
 import GitHub from "@mui/icons-material/GitHub";
 import { GppGood } from "@mui/icons-material";
