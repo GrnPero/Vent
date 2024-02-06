@@ -17,6 +17,7 @@ const Notepad = () => {
   const [text, setText] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [res, setRes] = useState<string>("");
+  const ventButtonColor = "#0e0d0d";
 
   const handleButtonClick = () => {
     setLoading(true);
@@ -126,12 +127,12 @@ const Notepad = () => {
             </IconButton>
           ) : (
             <IconButton
-              color="primary"
               size="large"
               style={{
                 marginTop: 20,
                 marginLeft: "auto",
                 cursor: "pointer",
+                color: ventButtonColor,
               }}
               onClick={handleButtonClick}
             >

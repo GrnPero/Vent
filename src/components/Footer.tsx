@@ -9,6 +9,7 @@ import { useState } from "react";
 const Footer = () => {
   const matches = useMediaQuery("(max-width:768px)");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const footerColor = "#0e0d0d";
 
   const handleDisclaimerClick = () => {
     setIsModalOpen(true);
@@ -28,15 +29,15 @@ const Footer = () => {
       <IconButton
         onClick={() => window.open("https://github.com/GrnPero/Vent")}
       >
-        <GitHub sx={{ marginRight: "0.5rem" }} />
+        <GitHub sx={{ marginRight: "0.5rem", color: footerColor }} />
         <Typography>Source Code</Typography>
       </IconButton>
       <IconButton>
-        <GppGood sx={{ marginRight: "0.5rem" }} />
+        <GppGood sx={{ marginRight: "0.5rem", color: footerColor }} />
         <Typography>Privacy Policy</Typography>
       </IconButton>
       <IconButton onClick={handleDisclaimerClick}>
-        <Warning sx={{ marginRight: "0.5rem" }} />
+        <Warning sx={{ marginRight: "0.5rem", color: footerColor }} />
         <Typography>Disclaimer</Typography>
       </IconButton>
       <Modal

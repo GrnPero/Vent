@@ -9,6 +9,8 @@ const Navbar = () => {
   const matches = useMediaQuery("(max-width:768px)");
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const navBarColor = "#1d6d86";
+  const iconColor = "#0e0d0d";
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -38,7 +40,10 @@ const Navbar = () => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <Segment fontSize={matches ? "large" : "medium"} />
+        <Segment
+          fontSize={matches ? "large" : "medium"}
+          sx={{ color: navBarColor }}
+        />
       </IconButton>
       <Menu
         id="basic-menu"
@@ -51,15 +56,15 @@ const Navbar = () => {
       >
         <MenuItem onClick={handleResetClick}>
           <ListItemIcon>
-            <Replay fontSize="small" />
+            <Replay fontSize="small" sx={{ color: iconColor }} />
           </ListItemIcon>
           <ListItemText>Reset</ListItemText>
         </MenuItem>
         <MenuItem component="a" href="https://github.com/GrnPero/Vent">
           <ListItemIcon>
-            <GitHub fontSize="small" />
+            <GitHub fontSize="small" sx={{ color: iconColor }} />
           </ListItemIcon>
-          <ListItemText>Code</ListItemText>
+          <ListItemText>Source Code</ListItemText>
         </MenuItem>
       </Menu>
     </Stack>
