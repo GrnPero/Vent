@@ -1,6 +1,6 @@
 import React from "react";
 import { IconButton, ListItemIcon, ListItemText, Stack } from "@mui/material";
-import { Segment, Replay } from "@mui/icons-material";
+import { Segment, Replay, GitHub } from "@mui/icons-material";
 import { useMediaQuery } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -54,6 +54,12 @@ const Navbar = () => {
             <Replay fontSize="small" />
           </ListItemIcon>
           <ListItemText>Reset</ListItemText>
+        </MenuItem>
+        <MenuItem component="a" href="https://github.com/GrnPero/Vent">
+          <ListItemIcon>
+            <GitHub fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Code</ListItemText>
         </MenuItem>
       </Menu>
     </Stack>
