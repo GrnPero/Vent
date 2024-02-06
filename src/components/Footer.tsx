@@ -32,7 +32,13 @@ const Footer = () => {
         <GitHub sx={{ marginRight: "0.5rem", color: footerColor }} />
         <Typography>Source Code</Typography>
       </IconButton>
-      <IconButton>
+      <IconButton
+        onClick={() =>
+          window.open(
+            "https://www.privacypolicytemplate.net/live.php?token=nlUKO7r03GsY6JNrbvaftJ5qyW56cOqT"
+          )
+        }
+      >
         <GppGood sx={{ marginRight: "0.5rem", color: footerColor }} />
         <Typography>Privacy Policy</Typography>
       </IconButton>
