@@ -111,7 +111,20 @@ const Notepad = () => {
             </Alert>
           ) : null}
 
-          {text.length >= 700 ? null : (
+          {text.length >= 700 ? null : text.length <= 10 ? (
+            <IconButton
+              color="default"
+              size="large"
+              style={{
+                marginTop: 20,
+                marginLeft: "auto",
+                cursor: "pointer",
+              }}
+              disabled={true}
+            >
+              <SendIcon fontSize={matches ? "large" : "medium"} />
+            </IconButton>
+          ) : (
             <IconButton
               color="primary"
               size="large"
