@@ -30,8 +30,7 @@ const Notepad = () => {
       })
       .catch((error) => {
         setLoading(false);
-        setRes("Error fetching data from Firebase");
-        console.error("Error fetching data from Firebase:", error);
+        setRes("Error fetching data from Firebase. Error: " + error);
       });
   };
 
