@@ -172,6 +172,16 @@ const Footer = () => {
               servers; instead, they are securely transmitted to OpenAI's
               services for processing.
             </p>
+            <h3>Retention of IP Addresses</h3>
+            <p>
+              We retain IP addresses collected during your use of our service
+              for a maximum period of one month. After this period, IP addresses
+              are securely deleted from our systems. This retention period is
+              necessary to enforce usage limits and ensure the overall quality
+              and security of our service. Your privacy is important to us, and
+              we are committed to minimizing the retention of personal
+              information.
+            </p>
             <h3>Limiting Usage Frequency</h3>
             <p>
               We use IP addresses to enforce usage limits to maintain the
